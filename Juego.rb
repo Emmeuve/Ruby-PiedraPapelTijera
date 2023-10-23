@@ -1,30 +1,46 @@
-#def respuesta_cpu
-#opciones = [0 = 'piedra', 1 = 'tijera', 2 = 'papel']
-#return respuestaCPU1
-#end
-
-def respuesta_usuario
-    opciones = ['piedra', 'papel', 'tijera']
-    return opciones1
-end
-
 puts "Bienvendo al juego Cachipun
-    Ingresa una opción para empezar el juego"
-respuesta = gets.chomp.to_i
 
-#"computador a elije su respuesta en #{rand(3)}"
-def respuesta_cpu1
-    cpu = Random.rand(3)
-    puts "computador ha jugado #{cpu}"
+Ingresa una opción para empezar el juego.
+
+- Debes seleccionar entre las opciones piedra, papel o tijera, para empezar a jugar.
+
+- Comencemos !!!"
+
+puts "Ingresa tu respuesta: piedra, papel o tijera"
+
+jugador = gets.chomp
+
+computador = rand(1..3) 
+if computador == 1
+  computador = "piedra"
+  elsif computador == 2
+  computador = "papel"
+  else computador = "tijera"
 end
 
-def juego
-    if respuesta == 'piedra' && cpu == '0'
-        puts 'Empataste' 
-    elsif respuesta == 'tijera' && cpu == '1'
-        puts 'ganaste'
-    elsif respuesta == 'papel' && cpu == '2'
-        puts 'Perdiste'  
-    else respuesta == 'piedra' or 'papel' or 'tijera' && cpu != '0' or '1' or '2'
-        puts 'Debes ingresar una opcion de piedra, Papel o tijera'
-end 
+
+if jugador == "piedra" && computador == "tijera"
+  puts "Ganaste :)"
+elsif jugador == "piedra" && computador == "papel"
+  puts "Perdiste :("
+elsif jugador == "piedra" && computador == "piedra"
+  puts "Empate :|"
+elsif jugador == "papel" && computador == "piedra"
+  puts "Ganaste :)"
+elsif jugador == "papel" && computador == "tijera"
+  puts "Perdiste :("
+elsif jugador == "papel" && computador == "papel"
+  puts "Empate :|"
+elsif jugador == "tijera" && computador == "papel"
+  puts "Ganaste :)"
+elsif jugador == "tijera" && computador == "piedra"
+  puts "Perdiste :("
+elsif jugador == "tijera" && computador == "tijera"
+  puts "Empate :|"
+else
+  puts "Ingresa una opción válida"
+end
+
+puts "El computador eligió #{computador}"
+
+puts "Gracias por jugar :)"
